@@ -15,7 +15,7 @@ abstract class ShoppingDatabase: RoomDatabase() {
     abstract fun getShoppingDao(): ShoppingDAO              //Através desta função, acessamos as operações da BD da classe DAO
 
     companion object{             //é o mesmo que a palavra reservada "static" do Java, isso é tudo dentro do "companion object" é estático.f
-        @Volatile              // Por investigar!!!
+        @Volatile              // é usada para modificar o valor de uma variável por diferentes threads, Também é usado para tornar as classes thread-safe. Isso significa que vários threads podem usar um método e uma instância das classes ao mesmo tempo sem nenhum problema.
         private var instance: ShoppingDatabase? = null              //variável do tipo da classe da BD, inicialmente nula.
         private val LOCK = Any()
 
